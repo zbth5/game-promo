@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>游戏平台 - 精彩娱乐体验</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(180deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #fff;
+            padding-bottom: 100px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .header h1 {
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 14px;
+            margin-top: 5px;
+            opacity: 0.9;
+        }
+
+        .section {
+            padding: 15px;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            padding-left: 12px;
+            border-left: 4px solid #00d4ff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-title .icon {
+            font-size: 20px;
+        }
+
+        .banner-img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            margin-bottom: 15px;
+        }
+
+        .desc-text {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #e0e0e0;
+            padding: 10px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .feature-item {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .feature-item .icon {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .feature-item h3 {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .feature-item p {
+            font-size: 12px;
+            color: #aaa;
+        }
+
+        .game-showcase {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .game-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .game-card img {
+            width: 100%;
+            display: block;
+        }
+
+        .game-card .info {
+            padding: 12px;
+        }
+
+        .game-card h3 {
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: #00d4ff;
+        }
+
+        .game-card p {
+            font-size: 13px;
+            color: #bbb;
+        }
+
+        .contact-section {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+            z-index: 100;
+        }
+
+        .contact-section .wechat-icon {
+            width: 45px;
+            height: 45px;
+            background: #07c160;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+        }
+
+        .contact-info {
+            text-align: left;
+        }
+
+        .contact-info .label {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+
+        .contact-info .wechat-id {
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .copy-btn {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: #fff;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .copy-btn:active {
+            background: rgba(255,255,255,0.3);
+            transform: scale(0.95);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(255,215,0,0.15) 0%, rgba(255,140,0,0.15) 100%);
+            border: 1px solid rgba(255,215,0,0.3);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .highlight-box h3 {
+            color: #ffd700;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .highlight-box p {
+            font-size: 13px;
+            color: #e0e0e0;
+        }
+
+        .toast {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0,0,0,0.8);
+            color: #fff;
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-size: 14px;
+            z-index: 200;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        .toast.show {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🎮 精彩游戏平台</h1>
+        <p>全新娱乐体验，随时随地畅玩</p>
+    </div>
+
+    <!-- 首充福利 -->
+    <div class="section">
+        <div class="section-title">
+            <span class="icon">🎁</span>
+            新用户专享福利
+        </div>
+        <img src="images/banner1.jpg" alt="新用户首充福利" class="banner-img">
+        <div class="desc-text">
+            新用户首充即享双重奖励！海量金币、专属礼包等你来拿。现在加入，开启您的游戏之旅，体验前所未有的刺激与乐趣！
+        </div>
+    </div>
+
+    <!-- 游戏特色 -->
+    <div class="section">
+        <div class="section-title">
+            <span class="icon">⭐</span>
+            平台特色
+        </div>
+        <div class="highlight-box">
+            <h3>🃏 赢一手好牌，赏一份心意</h3>
+            <p>牌桌上那份爽感，我们懂。现在，把这份快乐分出一点，送给让牌局更顺、更有节奏的人。</p>
+        </div>
+        <img src="images/banner2.jpg" alt="游戏特色" class="banner-img">
+    </div>
+
+    <!-- 游戏房间 -->
+    <div class="section">
+        <div class="section-title">
+            <span class="icon">🎲</span>
+            多样游戏房间
+        </div>
+        <div class="desc-text">
+            多种盲注级别可选，从新手到高手都能找到适合自己的房间。实时在线人数显示，快速匹配，无需等待！
+        </div>
+        <div class="game-showcase">
+            <div class="game-card">
+                <img src="images/game-rooms1.jpg" alt="游戏房间">
+                <div class="info">
+                    <h3>多级别盲注房间</h3>
+                    <p>20/40、50/100、100/200 等多种选择</p>
+                </div>
+            </div>
+            <div class="game-card">
+                <img src="images/game-rooms2.jpg" alt="更多房间">
+                <div class="info">
+                    <h3>海量在线玩家</h3>
+                    <p>数百桌同时在线，随时开局</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 实时桌台 -->
+    <div class="section">
+        <div class="section-title">
+            <span class="icon">🔥</span>
+            实时对战桌台
+        </div>
+        <div class="game-card">
+            <img src="images/tables.jpg" alt="实时桌台">
+            <div class="info">
+                <h3>8人桌实时对战</h3>
+                <p>查看实时牌桌状态，选择适合您的对战场次</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 真人娱乐 -->
+    <div class="section">
+        <div class="section-title">
+            <span class="icon">👑</span>
+            热门真人娱乐
+        </div>
+        <div class="game-card">
+            <img src="images/live-casino.jpg" alt="真人娱乐">
+            <div class="info">
+                <h3>性感荷官 倾情演绎</h3>
+                <p>DB真人、欧博真人、PA真人，多种真人游戏任您选择</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 电子游戏 -->
+    <div class="section">
+        <div class="section-title">
+            <span class="icon">🎰</span>
+            热门电子游戏
+        </div>
+        <div class="game-card">
+            <img src="images/slots.jpg" alt="电子游戏">
+            <div class="info">
+                <h3>火爆游戏 轻松爆奖</h3>
+                <p>麻将胡了、少林足球、亡灵大盗等热门游戏</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 捕鱼游戏 -->
+    <div class="section">
+        <div class="section-title">
+            <span class="icon">🐟</span>
+            热门捕鱼游戏
+        </div>
+        <div class="game-card">
+            <img src="images/fishing.jpg" alt="捕鱼游戏">
+            <div class="info">
+                <h3>经典捕鱼 轻松爆奖</h3>
+                <p>财神捕鱼、五龙捕鱼、猎龙高手等多种捕鱼玩法</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 体育电竞 -->
+    <div class="section">
+        <div class="section-title">
+            <span class="icon">⚽</span>
+            体育电竞
+        </div>
+        <div class="game-card">
+            <img src="images/sports.jpg" alt="体育电竞">
+            <div class="info">
+                <h3>最全赛事 实时结算</h3>
+                <p>FB体育、DB电竞，覆盖全球热门赛事</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部联系方式 -->
+    <div class="contact-section">
+        <div class="wechat-icon">💬</div>
+        <div class="contact-info">
+            <div class="label">联系我（微信）</div>
+            <div class="wechat-id" id="wechatId">example123</div>
+        </div>
+        <button class="copy-btn" onclick="copyWechat()">复制微信号</button>
+    </div>
+
+    <div class="toast" id="toast">已复制到剪贴板</div>
+
+    <script>
+        function copyWechat() {
+            const wechatId = document.getElementById('wechatId').textContent;
+            
+            // 创建临时输入框
+            const input = document.createElement('input');
+            input.value = wechatId;
+            document.body.appendChild(input);
+            input.select();
+            
+            try {
+                document.execCommand('copy');
+                showToast('微信号已复制：' + wechatId);
+            } catch (err) {
+                showToast('复制失败，请手动复制');
+            }
+            
+            document.body.removeChild(input);
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
