@@ -239,11 +239,46 @@
         .toast.show {
             opacity: 1;
         }
+
+        /* 畅玩入口 */
+        .play-entry {
+            position: fixed;
+            bottom: 85px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            z-index: 99;
+            pointer-events: none;
+        }
+
+        .play-entry-text {
+            font-size: 16px;
+            font-weight: bold;
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            margin-bottom: 5px;
+        }
+
+        .play-entry-arrow {
+            font-size: 24px;
+            color: #ffd700;
+            animation: bounce 1s infinite;
+            display: inline-block;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(8px);
+            }
+        }
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>🎮 精彩游戏平台</h1>
+        <h1>🎮 德州游戏平台</h1>
         <p>全新娱乐体验，随时随地畅玩</p>
     </div>
 
@@ -283,17 +318,17 @@
         </div>
         <div class="game-showcase">
             <div class="game-card">
-                <img src="images/game-rooms1.jpg" alt="游戏房间">
-                <div class="info">
-                    <h3>多级别盲注房间</h3>
-                    <p>20/40、50/100、100/200 等多种选择</p>
-                </div>
-            </div>
-            <div class="game-card">
                 <img src="images/game-rooms2.jpg" alt="更多房间">
                 <div class="info">
                     <h3>海量在线玩家</h3>
                     <p>数百桌同时在线，随时开局</p>
+                </div>
+            </div>
+            <div class="game-card">
+                <img src="images/game-rooms1.jpg" alt="游戏房间">
+                <div class="info">
+                    <h3>多级别盲注房间</h3>
+                    <p>20/40、50/100、100/200 等多种选择</p>
                 </div>
             </div>
         </div>
@@ -372,6 +407,12 @@
                 <p>FB体育、DB电竞，覆盖全球热门赛事</p>
             </div>
         </div>
+    </div>
+
+    <!-- 畅玩入口 -->
+    <div class="play-entry">
+        <div class="play-entry-text">畅玩入口</div>
+        <div class="play-entry-arrow">⬇️</div>
     </div>
 
     <!-- 底部联系方式 -->
