@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="preconnect" href="https://zbth5.github.io">
-    <link rel="dns-prefetch" href="https://zbth5.github.io">
     <title>游戏平台 - 精彩娱乐体验</title>
     <style>
         * {
@@ -64,10 +62,6 @@
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
             margin-bottom: 15px;
-        }
-
-        img {
-            content-visibility: auto;
         }
 
         .desc-text {
@@ -239,41 +233,6 @@
         .toast.show {
             opacity: 1;
         }
-
-        /* 畅玩入口 */
-        .play-entry {
-            position: fixed;
-            bottom: 85px;
-            left: 0;
-            right: 0;
-            text-align: center;
-            z-index: 99;
-            pointer-events: none;
-        }
-
-        .play-entry-text {
-            font-size: 16px;
-            font-weight: bold;
-            color: #ffd700;
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-            margin-bottom: 5px;
-        }
-
-        .play-entry-arrow {
-            font-size: 24px;
-            color: #ffd700;
-            animation: bounce 1s infinite;
-            display: inline-block;
-        }
-
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(8px);
-            }
-        }
     </style>
 </head>
 <body>
@@ -409,18 +368,12 @@
         </div>
     </div>
 
-    <!-- 畅玩入口 -->
-    <div class="play-entry">
-        <div class="play-entry-text">畅玩入口</div>
-        <div class="play-entry-arrow">⬇️</div>
-    </div>
-
     <!-- 底部联系方式 -->
     <div class="contact-section">
         <div class="wechat-icon">💬</div>
         <div class="contact-info">
             <div class="label">联系我（微信）</div>
-            <div class="wechat-id" id="wechatId">skeleduoya</div>
+            <div class="wechat-id" id="wechatId">example123</div>
         </div>
         <button class="copy-btn" onclick="copyWechat()">复制微信号</button>
     </div>
